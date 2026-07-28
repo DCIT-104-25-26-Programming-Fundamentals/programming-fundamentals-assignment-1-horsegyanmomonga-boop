@@ -61,11 +61,7 @@
 # =============================================================================
 
 
-# Topic: Multi-dimensional Arrays (2D Lists), Nested Loops, and Functions
-# =============================================================================
-#
-# TASK: Matrix Operations
-#
+
 
 
 def print_matrix(matrix):
