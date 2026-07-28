@@ -50,11 +50,6 @@
 # =============================================================================
 
 
-# Topic: Loops, Sequences, and Functions
-# =============================================================================
-#
-# TASK: Fibonacci Sequence Generator
-#
 
 
 def generate_fibonacci(n):
