@@ -79,3 +79,88 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+
+# =============================================================================
+# PROGRAMMING FUNDAMENTALS — Assignment 7
+# Topic: Lists, Functions, and Control Flow
+# =============================================================================
+
+
+def display_menu():
+    """Displays the main menu options to the user."""
+    print("\n============================")
+    print("     TO-DO LIST MENU")
+    print("============================")
+    print("1. Add task")
+    print("2. View tasks")
+    print("3. Delete task")
+    print("4. Quit")
+
+
+def add_task(tasks):
+    """Prompts the user for a task and appends it to the list."""
+    task = input("Enter task: ").strip()
+    if task:
+        tasks.append(task)
+        print(f'Task added: "{task}"')
+    else:
+        print("Task cannot be empty.")
+
+
+def view_tasks(tasks):
+    """Displays all tasks with 1-based index numbers."""
+    if not tasks:
+        print("\nYour to-do list is empty!")
+        return
+
+    print("\nYour Tasks:")
+    for index, task in enumerate(tasks, start=1):
+        print(f"{index}. {task}")
+
+
+def delete_task(tasks):
+    """Allows the user to select and delete a task by its display number."""
+    if not tasks:
+        print("\nYour to-do list is empty! Nothing to delete.")
+        return
+
+    # Show current tasks so the user knows what numbers to pick
+    view_tasks(tasks)
+
+    user_input = input("\nEnter task number to delete: ").strip()
+
+    # Validate that the input is a valid integer within list range
+    if user_input.isdigit():
+        task_num = int(user_input)
+        if 1 <= task_num <= len(tasks):
+            removed_task = tasks.pop(task_num - 1)
+            print(f'Task "{removed_task}" has been removed.')
+        else:
+            print("Error: Invalid task number. Please try again.")
+    else:
+        print("Error: Please enter a valid number.")
+
+
+def main():
+    """Main loop controlling application flow."""
+    tasks = []
+
+    while True:
+        display_menu()
+        choice = input("Enter your choice (1-4): ").strip()
+
+        if choice == "1":
+            add_task(tasks)
+        elif choice == "2":
+            view_tasks(tasks)
+        elif choice == "3":
+            delete_task(tasks)
+        elif choice == "4":
+            print("\nGoodbye!")
+            break
+        else:
+            print("Error: Invalid choice. Please enter a number between 1 and 4.")
+
+
+if __name__ == "__main__":
+    main()
