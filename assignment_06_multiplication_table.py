@@ -55,3 +55,51 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+# =============================================================================
+# PROGRAMMING FUNDAMENTALS — Assignment 6
+# Topic: Loops and Functions
+# =============================================================================
+
+def print_table_for(num):
+    """Helper function to print a single multiplication table from 1 to 12."""
+    print(f"Multiplication Table for {num}:")
+    for i in range(1, 13):
+        print(f"{num:2d}  x  {i:2d}  =  {num * i:2d}")
+
+
+def part_a():
+    """PART A — Single Table"""
+    user_input = input("Enter a number: ")
+
+    # Validate that input is a positive integer
+    if not user_input.isdigit() or int(user_input) <= 0:
+        print("Error: Please enter a valid positive integer.")
+        return
+
+    number = int(user_input)
+    print_table_for(number)
+
+
+def part_b():
+    """PART B — Tables from 1 to N"""
+    user_input = input("Enter a number N: ")
+
+    # Validate that input is a positive integer
+    if not user_input.isdigit() or int(user_input) <= 0:
+        print("Error: Please enter a valid positive integer.")
+        return
+
+    n = int(user_input)
+    for i in range(1, n + 1):
+        print_table_for(i)
+        if i < n:
+            print("-" * 27)
+
+
+# --- Main Execution ---
+if __name__ == "__main__":
+    print("=== PART A ===")
+    part_a()
+
+    print("\n=== PART B ===")
+    part_b()
