@@ -36,13 +36,6 @@
 # =============================================================================
 
 
-# Topic: Conditional Logic, Loops, and Functions
-# =============================================================================
-#
-# TASK: Prime Number Checker
-#
-
-
 def is_prime(number):
     """Returns True if number is prime, False otherwise."""
     # Numbers less than 2 are not prime
