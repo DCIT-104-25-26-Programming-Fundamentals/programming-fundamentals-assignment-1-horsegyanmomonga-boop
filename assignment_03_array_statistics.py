@@ -39,11 +39,7 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
-# Topic: Lists (Arrays), Loops, and Functions
-# =============================================================================
-#
-# TASK: Array Statistics Calculator
-#
+
 
 
 def calculate_sum(numbers):
