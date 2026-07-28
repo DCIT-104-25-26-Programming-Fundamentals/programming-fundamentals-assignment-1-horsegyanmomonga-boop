@@ -55,10 +55,6 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
-# =============================================================================
-# PROGRAMMING FUNDAMENTALS — Assignment 6
-# Topic: Loops and Functions
-# =============================================================================
 
 def print_table_for(num):
     """Helper function to print a single multiplication table from 1 to 12."""
