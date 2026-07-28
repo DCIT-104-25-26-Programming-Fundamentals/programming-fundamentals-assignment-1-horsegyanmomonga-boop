@@ -49,3 +49,76 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+
+# Topic: Loops, Sequences, and Functions
+# =============================================================================
+#
+# TASK: Fibonacci Sequence Generator
+#
+
+
+def generate_fibonacci(n):
+    """PART A: Returns a list containing the first N Fibonacci numbers."""
+    if n <= 0:
+        return []
+
+    if n == 1:
+        return [0]
+
+    # Initialize sequence with first two terms
+    fib_sequence = [0, 1]
+
+    # Use a loop to generate remaining terms up to N
+    for i in range(2, n):
+        next_term = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_term)
+
+    return fib_sequence
+
+
+def is_fibonacci(num):
+    """PART B: Returns True if num is a Fibonacci number, False otherwise."""
+    # Negative numbers are not part of the standard Fibonacci sequence
+    if num < 0:
+        return False
+
+    # 0 and 1 are valid Fibonacci numbers
+    if num == 0 or num == 1:
+        return True
+
+    # Iterative generation until we reach or exceed the target number
+    a, b = 0, 1
+    while b < num:
+        a, b = b, a + b
+
+    # If b equals num, it belongs to the sequence
+    return b == num
+
+
+def main():
+    print("=== FIBONACCI SEQUENCE GENERATOR ===")
+
+    # PART A: Print first N terms
+    print("\n--- PART A: First N Terms ---")
+    n = int(input("How many terms? "))
+
+    if n <= 0:
+        print("Error: Please enter a positive integer.")
+    else:
+        terms = generate_fibonacci(n)
+        # Convert list of integers to space-separated string
+        print("Fibonacci sequence:", " ".join(str(x) for x in terms))
+
+    # PART B: Check membership
+    print("\n--- PART B: Check a Number ---")
+    check_num = int(input("Enter a number to check: "))
+
+    if is_fibonacci(check_num):
+        print(f"{check_num} is a Fibonacci number.")
+    else:
+        print(f"{check_num} is NOT a Fibonacci number.")
+
+
+# Execute the program
+if __name__ == "__main__":
+    main()
